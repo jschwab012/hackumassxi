@@ -11,4 +11,5 @@ loginbutton.addEventListener("click", () => {
     } else {
         alert("Fail")
     }
+    runQuery({discord: "tester"});
 })

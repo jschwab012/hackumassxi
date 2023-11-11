@@ -6,7 +6,7 @@ const uri = `mongodb+srv://${username}:${password}@cluster0.piyp7kc.mongodb.net/
 const client = new MongoClient(uri);
 
 let query = {discord: "tester"}; //
-async function run(query) {
+async function runQuery(query) {
   try {
     await client.connect();
     const db = client.db('matchmaker');
@@ -20,4 +20,4 @@ async function run(query) {
     await client.close();
   }
 }
-run(query).catch(console.error);
+runQuery(query).catch(console.error);
