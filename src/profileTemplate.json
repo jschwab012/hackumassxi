@@ -1,0 +1,8 @@
+{
+    "_id":{"$oid":"654f3a9fc384b79f246fba6d"},
+    "name":"test testerson",
+    "likes":["lol","fortnite","genre-mobas"],
+    "hates":["shooters","apex legends"],
+    "discord":"tester",
+    "freetimes":[{"$timestamp":{"t":0,"i":0}}]
+}

@@ -1,22 +1,23 @@
 const { MongoClient } = require('mongodb');
-var username = "test";
-var password = "test";
+const username = "test";
+const password = "test";
 
 const uri = `mongodb+srv://${username}:${password}@cluster0.piyp7kc.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
-async function run() {
+let query = {discord: "tester"}; //
+async function run(query) {
   try {
     await client.connect();
-    const db = client.db('blog');
-    const collection = db.collection('posts');
+    const db = client.db('matchmaker');
+    const collection = db.collection('gamers');
 
-    // Find the first document in the collection
-    const first = await collection.findOne();
+    // Execute the query
+    const first = await collection.find(query).toArray();
     console.log(first);
   } finally {
     // Close the database connection when finished or an error occurs
     await client.close();
   }
 }
-run().catch(console.error);
+run(query).catch(console.error);
