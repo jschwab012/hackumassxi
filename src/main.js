@@ -5,9 +5,9 @@ loginbutton.addEventListener("click", () => {
     const username = login.username.value;
     const pass = login.password.value;
 
-    if (username === "JOHNSMITH" && pass === "password") {
+    if (username === "JOHNSMITH" && pass === "test") {
+        window.location = (`https://www.google.com/`)
         alert("Success")
-        location.reload()
     } else {
         alert("Fail")
     }
